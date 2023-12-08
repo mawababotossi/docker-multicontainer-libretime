@@ -8,13 +8,13 @@ CUSTOMISATIONS_SCRIPT="/etc/airtime-customisations/run.sh"
 function setConfigFromEnvironments {
 
     # RabbitMQ
-    crudini --set "$AIRTIME_CONFIG_FILE" "rabbitmq" "host" "libretime-rabbitmq"
+    crudini --set "$AIRTIME_CONFIG_FILE" "rabbitmq" "host" "$RABBITMQ_DEFAULT_HOST"
     crudini --set "$AIRTIME_CONFIG_FILE" "rabbitmq" "user" "$RABBITMQ_DEFAULT_USER"
     crudini --set "$AIRTIME_CONFIG_FILE" "rabbitmq" "password" "$RABBITMQ_DEFAULT_PASS"
     crudini --set "$AIRTIME_CONFIG_FILE" "rabbitmq" "vhost" "$RABBITMQ_DEFAULT_VHOST"
 
     # PostgreSQL
-    crudini --set "$AIRTIME_CONFIG_FILE" "database" "host" "libretime-postgres"
+    crudini --set "$AIRTIME_CONFIG_FILE" "database" "host" "$POSTGRES_HOST"
     crudini --set "$AIRTIME_CONFIG_FILE" "database" "dbname" "$POSTGRES_DB_NAME"
     crudini --set "$AIRTIME_CONFIG_FILE" "database" "dbuser" "$POSTGRES_USER"
     crudini --set "$AIRTIME_CONFIG_FILE" "database" "dbpass" "$POSTGRES_PASSWORD"
